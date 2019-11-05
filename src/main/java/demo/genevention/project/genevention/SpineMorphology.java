@@ -1,14 +1,18 @@
 package demo.genevention.project.genevention;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "bio")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class SpineMorphology {
 
     //The @Id annotation tells spring that the _id field will be used as the primary identifier.
     @Id
+    @JsonIgnore
     private ObjectId _id;
 
     private String num_mitochondria;

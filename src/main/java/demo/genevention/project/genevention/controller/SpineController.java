@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -52,7 +49,8 @@ public class SpineController {
                                            @PathVariable("z") String z){
         List<SpineMorphology> spine;
         spine = spineServiceImpl.threeFields(x, y, z);
-        return spine.stream().limit(4).collect(Collectors.toList());
+
+        return spine.stream().limit(10).collect(Collectors.toList());
     }
 
 

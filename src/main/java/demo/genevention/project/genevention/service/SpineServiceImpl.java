@@ -51,7 +51,7 @@ public class SpineServiceImpl implements SpineService {
 //        query.fields().include("_id");
         query.fields().include(x);
         query.fields().include(y);
-        query.fields().include(z);
+//        query.fields().include(z);
         return mongoTemplate.find(query, SpineMorphology.class);
     }
 
